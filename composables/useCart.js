@@ -5,7 +5,7 @@ const cartItems = ref([]);
 
 // computed total price
 const totalPrice = computed(() =>
-  cartItems.value.reduce((sum, item) => sum + Number(item.price || 0), 0)
+  cartItems.value.reduce((sum, item) => sum + Number(item.price || 0), 0),
 );
 
 // computed tax (e.g., 5% of total)
@@ -17,7 +17,7 @@ const addToCart = (product) => {
     cartItems.value.push({
       ...product,
       price: Number(product.price || 0), // ensure numeric
-      quantity: 1
+      quantity: 1,
     });
   }
 };

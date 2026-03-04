@@ -24,7 +24,7 @@
           <div class="w-8 h-8">
             <img
               :src="karzinka"
-              alt="icon"
+              alt="karzinka"
               class="h-full w-full object-cover"
             />
           </div>
@@ -59,10 +59,10 @@
 </template>
 
 <script setup>
-import logo from "@/assets/images/58cc14259c4fc1fafb1aa931e9f4ea8af50f59db.png";
-import karzinka from "@/assets/icons/Group.svg";
+import logo from "@/assets/images/logo.png";
+import karzinka from "@/assets/icons/cart.png";
 import like from "@/assets/icons/heart.png";
-import profile from "@/assets/icons/Union.svg";
+import profile from "@/assets/icons/user.png";
 
 import { useSidebar } from "@/composables/useSidebar"; // <== exact casing
 

@@ -47,6 +47,10 @@
                 class="w-5 h-5"
               />
             </div>
+
+            <!-- <div>
+              <img :src="plus" alt="here" class="w-16 h-16" />
+            </div> -->
           </button>
         </div>
       </div>
@@ -57,10 +61,12 @@
 <script setup>
 import { ref, watch } from "vue";
 import like from "@/assets/icons/heart.png";
-import likeRed from "@/assets/icons/heartredOne.png";
+import likeRed from "@/assets/icons/hearted.png";
 import plus from "@/assets/icons/plus.png";
 import tick from "@/assets/icons/check.png";
 import { useCart } from "@/composables/useCart";
+
+// const { addToCart } = useCart();
 
 const props = defineProps({
   malumot: {
@@ -70,7 +76,7 @@ const props = defineProps({
 });
 
 // 🔹 destructure everything from one call
-const { cartItems, addToCart } = useCart();
+const { cartItems, addToCart, removeFromCart } = useCart();
 
 const liked = ref(false);
 const cliked = ref(false);

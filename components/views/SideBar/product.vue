@@ -26,9 +26,7 @@
 <script setup>
 // import { ref } from "vue";
 import { useCart } from "@/composables/useCart";
-const { cartItems, totalPrice, tax } = useCart(); // add tax
-
-const { clearCart } = useCart();
+const { cartItems, totalPrice, tax, clearCart } = useCart();
 
 const emit = defineEmits(["orderSubmitted"]);
 

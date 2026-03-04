@@ -25,12 +25,13 @@
     <!-- ////////////////////////////// -->
   </div>
 </template>
-  
+
 <script setup>
-import { computed } from "vue";
+// import { ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { useSidebar } from "@/composables/useSidebar";
 import { useCart } from "@/composables/useCart";
-
+// import { useCart } from "@/composables/useCart";
 import Box from "@/components/views/SideBar/box.vue";
 import Product from "@/components/views/SideBar/product.vue";
 import DoneProduct from "@/components/views/SideBar/doneProduct.vue";
@@ -48,8 +49,15 @@ const currentView = computed(() => {
   else return Box;
 });
 
-// import { useCart } from "@/composables/useCart";
-
-const { cartItems, totalPrice, tax } = useCart(); // add tax
+const { cartItems } = useCart(); // add tax
+watch(
+  cartItems,
+  (items) => {
+    if (items.length > 0) {
+      orderSubmitted.value = false;
+    }
+  },
+  { deep: true },
+);
 // const { isOpen, closeSidebar } = useSidebar();
 </script>
