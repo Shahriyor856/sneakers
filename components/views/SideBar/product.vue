@@ -26,13 +26,13 @@
 <script setup>
 // import { ref } from "vue";
 import { useCart } from "@/composables/useCart";
-const { cartItems, totalPrice, tax, clearCart } = useCart();
+const { cartItems, totalPrice, tax, submitCart } = useCart();
 
 const emit = defineEmits(["orderSubmitted"]);
 
 const submitOrder = () => {
-  emit("orderSubmitted"); // first tell parent
-  clearCart(); // then clear
+  submitCart();
+  emit("orderSubmitted");
 };
 // const { cartItems, totalPrice, tax } = useCart();
 </script>

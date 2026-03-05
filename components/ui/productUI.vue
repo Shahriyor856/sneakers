@@ -4,7 +4,7 @@
   >
     <div class="relative">
       <!-- It is what i want to move -->
-      <div class="absolute top-0 left-0 cursor-pointer">
+      <div v-if="!props.readonly" class="absolute top-0 left-0 cursor-pointer">
         <div
           :class="[
             'flex justify-center items-center w-12 h-12 rounded-2xl border',
@@ -34,6 +34,7 @@
         </div>
         <div>
           <button
+            v-if="!props.readonly"
             :class="[
               'flex justify-center items-center w-12 h-12 rounded-2xl border  border-[#D3D3D3] cursor-pointer ',
               cliked ? 'bg-[#63DC79] border-0' : 'border-[#C4C4C4]',
@@ -73,10 +74,12 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  readonly: { type: Boolean, default: false },
 });
 
 // 🔹 destructure everything from one call
-const { cartItems, addToCart, removeFromCart } = useCart();
+const { cartItems, likedItems, addToCart, removeFromCart, toggleLiked } =
+  useCart();
 
 const liked = ref(false);
 const cliked = ref(false);
@@ -84,20 +87,35 @@ const cliked = ref(false);
 // 🔹 watch the cartItems to sync button
 watch(
   cartItems,
-  (newCart) => {
+  (newCart) => {      
     const exists = newCart.find((p) => p.text === props.malumot.text);
     cliked.value = !!exists; // button reflects cart
   },
   { deep: true, immediate: true },
 );
 
+watch(
+  likedItems,
+  (newLikedCart) => {
+    const exists = newLikedCart.find((p) => p.text === props.malumot.text);
+    liked.value = !!exists;
+  },
+  {
+    deep: true,
+    immediate: true,
+  },
+);
+
 // toggle heart
+
 function toggleLike() {
-  liked.value = !liked.value;
+  if (props.readonly) return;
+  toggleLiked(props.malumot);
 }
 
 // toggle “+” / check and add to cart
 function toggleCliked() {
+  if (props.readonly) return;
   cliked.value = !cliked.value;
 
   if (cliked.value) {
@@ -109,9 +127,7 @@ function toggleCliked() {
     });
   } else {
     // remove from cart if unchecked
-    cartItems.value = cartItems.value.filter(
-      (p) => p.text !== props.malumot.text,
-    );
+    removeFromCart(props.malumot);
   }
 }
 </script>

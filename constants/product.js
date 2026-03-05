@@ -24,5 +24,104 @@ export const productData = [
     text: "Кроссовки Puma X Aka Boku Future Rider",
     price: "8999",
   },
-  
+  // {
+  //   image: one,
+  //   text: "Мужские Кроссовки Nike Blazer Mid Suede",
+  //   price: "12999",
+  // },
+  // {
+  //   image: two,
+  //   text: "Мужские Кроссовки Nike Air Max 270",
+  //   price: "12999",
+  // },
+  // {
+  //   image: three,
+  //   text: "Мужские Кроссовки Nike Blazer ",
+  //   price: "8499",
+  // },
+  // {
+  //   image: four,
+  //   text: "Кроссовки Puma X Aka Boku Future Rider",
+  //   price: "8999",
+  // },
+  // {
+  //   image: one,
+  //   text: "Мужские Кроссовки Nike Blazer Mid Suede",
+  //   price: "12999",
+  // },
+  // {
+  //   image: two,
+  //   text: "Мужские Кроссовки Nike Air Max 270",
+  //   price: "12999",
+  // },
+  // {
+  //   image: three,
+  //   text: "Мужские Кроссовки Nike Blazer ",
+  //   price: "8499",
+  // },
+  // {
+  //   image: four,
+  //   text: "Кроссовки Puma X Aka Boku Future Rider",
+  //   price: "8999",
+  // },
+  // {
+  //   image: one,
+  //   text: "Мужские Кроссовки Nike Blazer Mid Suede",
+  //   price: "12999",
+  // },
+  // {
+  //   image: two,
+  //   text: "Мужские Кроссовки Nike Air Max 270",
+  //   price: "12999",
+  // },
+  // {
+  //   image: three,
+  //   text: "Мужские Кроссовки Nike Blazer ",
+  //   price: "8499",
+  // },
+  // {
+  //   image: four,
+  //   text: "Кроссовки Puma X Aka Boku Future Rider",
+  //   price: "8999",
+  // },
+  // {
+  //   image: one,
+  //   text: "Мужские Кроссовки Nike Blazer Mid Suede",
+  //   price: "12999",
+  // },
+  // {
+  //   image: two,
+  //   text: "Мужские Кроссовки Nike Air Max 270",
+  //   price: "12999",
+  // },
+  // {
+  //   image: three,
+  //   text: "Мужские Кроссовки Nike Blazer ",
+  //   price: "8499",
+  // },
+  // {
+  //   image: four,
+  //   text: "Кроссовки Puma X Aka Boku Future Rider",
+  //   price: "8999",
+  // },
+  // {
+  //   image: one,
+  //   text: "Мужские Кроссовки Nike Blazer Mid Suede",
+  //   price: "12999",
+  // },
+  // {
+  //   image: two,
+  //   text: "Мужские Кроссовки Nike Air Max 270",
+  //   price: "12999",
+  // },
+  // {
+  //   image: three,
+  //   text: "Мужские Кроссовки Nike Blazer ",
+  //   price: "8499",
+  // },
+  // {
+  //   image: four,
+  //   text: "Кроссовки Puma X Aka Boku Future Rider",
+  //   price: "8999",
+  // },
 ];

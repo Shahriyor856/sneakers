@@ -1,10 +1,7 @@
-
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  components: [
-    { path: "~/components", pathPrefix: false },
-  ],
+  components: [{ path: "~/components", pathPrefix: false }],
 
   imports: {
     dirs: ["stores", "helpers", "services"],
@@ -17,4 +14,5 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  ssr: false,
 });

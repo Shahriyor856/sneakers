@@ -30,23 +30,20 @@
           </div>
           <p class="text-[#5C5C5C] font-medium text-xl">1205 руб.</p>
         </button>
-        <!-- <button
-          @click="openSidebar"
-          class="bg-green-600 rounded-2xl p-2 text-[white] cursor-pointer"
-        >
-          Open Sidebar
-        </button> -->
+
         <AppSidebar />
-        <div class="flex justify-center items-center gap-4 cursor-pointer">
-          <div class="w-8 h-8">
-            <img
-              :src="like"
-              alt="icon"
-              class="h-full w-full object-cover object-center"
-            />
-          </div>
-          <p class="text-[#5C5C5C] font-medium text-xl">Закладки</p>
-        </div>
+        <NuxtLink to="/LikedPr">
+          <button class="flex justify-center items-center gap-4 cursor-pointer">
+            <div class="w-8 h-8">
+              <img
+                :src="like"
+                alt="icon"
+                class="h-full w-full object-cover object-center"
+              />
+            </div>
+            <p class="text-[#5C5C5C] font-medium text-xl">Закладки</p>
+          </button>
+        </NuxtLink>
         <div class="flex justify-center items-center gap-4 cursor-pointer">
           <div class="w-8 h-8">
             <img :src="profile" alt="icon" class="h-full w-full object-cover" />

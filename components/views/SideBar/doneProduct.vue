@@ -11,8 +11,8 @@
       </p>
     </div>
     <div class="w-full">
-      <NuxtLink to="likedProducts.vue">
-        <AppButton label="Вернуться назад" />
+      <NuxtLink to="/SubmittedPr" title="Вернуться назад">
+        <AppButton label="Вернуться назад" @click="closeSidebar()" />
       </NuxtLink>
     </div>
   </div>
@@ -20,4 +20,9 @@
 
 <script setup>
 import file from "@/assets/images/file.png";
+import { useSidebar } from "@/composables/useSidebar";
+// import { useCart } from "@/composables/useCart";
+
+// const { submitCart } = useCart();
+const { closeSidebar } = useSidebar();
 </script>
