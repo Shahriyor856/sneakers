@@ -7,12 +7,16 @@
 
   <div
     :class="[
-      ' flex flex-col   gap-10  fixed  p-6 top-0 right-0 h-full  w-96 bg-[#FFFFFF] shadow-2xl z-50 transform transition-transform duration-300 ',
+      ' flex flex-col  h-full  overflow-y-auto    gap-2 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10  fixed  p-2 sm:p-3 md:p-4  lg:p-5 xl:p-6 top-0 right-0  w-32 sm:w-48 md:w-64  lg:w-80 xl:w-96 bg-[#FFFFFF] shadow-2xl z-50 transform transition-transform duration-300 ',
       isOpen ? 'translate-x-0' : 'translate-x-full',
     ]"
   >
     <div class="flex items-center justify-between">
-      <h1 class="font-bold text-3xl">Корзина</h1>
+      <h1
+        class="font-medium md:font-semibold xl:font-bold text-sm md:text-base lg:text-xl xl:text-3xl leading-tight"
+      >
+        Корзина
+      </h1>
     </div>
 
     <component :is="currentView" @orderSubmitted="orderSubmitted = true" />

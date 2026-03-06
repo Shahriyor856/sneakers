@@ -1,20 +1,24 @@
 <template>
   <div class="flex flex-col justify-between h-full">
-    <div class="flex flex-col gap-6">
+    <div class="flex flex-col gap-2 md:gap-2 lg:gap-4 xl:gap-6">
       <ProductUITwo
         v-for="(item, index) in cartItems"
         :key="index"
         :malumot="item"
       />
     </div>
-    <div class="flex flex-col gap-5">
+    <div class="flex flex-col gap-2 md:gap-3 xl:gap-5">
       <div class="flex justify-between">
-        <h1>Итого:</h1>
-        <h1>{{ totalPrice }} руб.</h1>
+        <h1 class="text-[6px] md:text-[8px] lg:text-sm xl:text-base">Итого:</h1>
+        <h1 class="text-[6px] md:text-[8px] lg:text-sm xl:text-base">
+          {{ totalPrice }} руб.
+        </h1>
       </div>
       <div class="flex justify-between">
-        <h1>Налог:</h1>
-        <h1>{{ tax }} руб.</h1>
+        <h1 class="text-[6px] md:text-[8px] lg:text-sm xl:text-base">Налог:</h1>
+        <h1 class="text-[6px] md:text-[8px] lg:text-sm xl:text-base">
+          {{ tax }} руб.
+        </h1>
       </div>
       <div>
         <AppButton label="Оформить заказ" @click="submitOrder" />
