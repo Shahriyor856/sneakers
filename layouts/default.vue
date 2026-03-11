@@ -1,11 +1,15 @@
-<!-- <script setup lang="ts">
-// import AppHeader from "~/components/layouts/AppHeader.vue";
-</script> -->
-
 <template>
   <div>
-    <AppHeader />
+    <AppHeader v-if="showHeader" />
     <NuxtPage />
     <AppSidebar />
   </div>
 </template>
+
+<script setup>
+const route = useRoute();
+
+const showHeader = computed(() => {
+  return route.path !== "/login" && route.path !== "/register";
+});
+</script>

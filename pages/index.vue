@@ -58,7 +58,30 @@
 </template>
 
 <script setup>
+// import { ref, onMounted } from "vue";
+// import axios from "axios";
 import { data } from "@/constants/carusel";
 import search from "@/assets/icons/search.png";
 import { productData } from "@/constants/product";
+
+// await navigateTo("/login");
+// const products = ref([]);
+
+// async function getProducts() {
+//   try {
+//     const response = await axios.get(
+//       "https://muhammadsodiq.das-uty.uz/api/v1/products",
+//     );
+
+//     products.value = response.data;
+
+//     console.log(response.data);
+//   } catch (error) {
+//     console.error("API error is here look !!!", error);
+//   }
+// }
+
+// onMounted(() => {
+//   getProducts();
+// });
 </script>
