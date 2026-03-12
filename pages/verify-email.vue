@@ -39,6 +39,12 @@
         >
           Resend Otp
         </button>
+        <p class="mt-4 text-center">
+          Already have an account?
+          <NuxtLink to="/login" class="text-blue-500"
+            >Go to login page</NuxtLink
+          >
+        </p>
       </form>
     </div>
   </div>

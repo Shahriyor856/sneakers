@@ -44,11 +44,12 @@
     <div
       class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-16"
     >
-      <div v-for="(item, index) in productData" :key="index">
+      <div v-for="(item, index) in products" :key="index">
         <ProductUI
           :malumot="{
             image: item.image,
-            text: item.text,
+            text: item.description,
+            id: item.id,
             price: item.price,
           }"
         />
@@ -58,30 +59,37 @@
 </template>
 
 <script setup>
-// import { ref, onMounted } from "vue";
-// import axios from "axios";
+import axios from "axios";
 import { data } from "@/constants/carusel";
 import search from "@/assets/icons/search.png";
-import { productData } from "@/constants/product";
 
-// await navigateTo("/login");
-// const products = ref([]);
+const products = ref([]);
 
-// async function getProducts() {
-//   try {
-//     const response = await axios.get(
-//       "https://muhammadsodiq.das-uty.uz/api/v1/products",
-//     );
+async function getProducts() {
+  try {
+    const token = localStorage.getItem("token");
 
-//     products.value = response.data;
+    const response = await axios.get(
+      "https://muhammadsodiq.das-uty.uz/api/v1/products",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
 
-//     console.log(response.data);
-//   } catch (error) {
-//     console.error("API error is here look !!!", error);
-//   }
-// }
+    products.value = response.data;
 
-// onMounted(() => {
-//   getProducts();
-// });
+    console.log("Products:", response.data);
+  } catch (error) {
+    console.error(
+      "API error is here look !!!",
+      error.response?.data || error.message,
+    );
+  }
+}
+
+onMounted(() => {
+  getProducts();
+});
 </script>

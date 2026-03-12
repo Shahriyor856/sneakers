@@ -72,20 +72,26 @@
             </p>
           </button>
         </NuxtLink>
-        <div
-          class="flex items-center gap-2 sm:gap-2 md:gap-3 xl:gap-4 cursor-pointer"
-        >
+        <NuxtLink to="/login">
           <div
-            class="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-8 xl:h-8"
+            class="flex items-center gap-2 sm:gap-2 md:gap-3 xl:gap-4 cursor-pointer"
           >
-            <img :src="profile" alt="icon" class="h-full w-full object-cover" />
+            <div
+              class="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-8 xl:h-8"
+            >
+              <img
+                :src="profile"
+                alt="icon"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <p
+              class="hidden sm:block text-[#5C5C5C] font-medium text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl"
+            >
+              Login Page
+            </p>
           </div>
-          <p
-            class="hidden sm:block text-[#5C5C5C] font-medium text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl"
-          >
-            Профиль
-          </p>
-        </div>
+        </NuxtLink>
       </div>
     </div>
   </div>

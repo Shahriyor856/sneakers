@@ -35,6 +35,7 @@
       <div>
         <h1 class="text-sm md:text-base lg:text-lg xl:text-2xl leading-tight">
           {{ malumot.text }}
+          id:{{ malumot.id }}
         </h1>
       </div>
       <div class="flex justify-between items-center">

@@ -1,15 +1,17 @@
 <template>
   <div>
     <AppHeader v-if="showHeader" />
-    <NuxtPage />
-    <AppSidebar />
+    <slot />
+    <AppSidebar v-if="showHeader" />
   </div>
 </template>
 
 <script setup>
 const route = useRoute();
 
+const hiddenRoutes = ["/login", "/register", "/verify-email"];
+
 const showHeader = computed(() => {
-  return route.path !== "/login" && route.path !== "/register";
+  return !hiddenRoutes.includes(route.path);
 });
 </script>
