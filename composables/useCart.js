@@ -1,4 +1,5 @@
 // composables/useCart.js
+import { km } from "element-plus/es/locales.mjs";
 import { ref, computed } from "vue";
 
 const cartItems = ref([]);
@@ -47,6 +48,13 @@ const submitCart = () => {
   submittedProducts.value = cartItems.value.map((item) => ({ ...item }));
   clearCart();
 };
+
+// function cockroachSpeed(s) {
+//   //Good Luck!
+//   Math.floor((s.value === s.item in km) => return {
+//     s.value in cm
+//   })
+// }
 
 export function useCart() {
   return {

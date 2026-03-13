@@ -34,9 +34,10 @@
         </div>
 
         <input
+          v-model="searchText"
           type="text"
           placeholder="Поиск..."
-          class="w-[82%] sm:w-[80%] h-full text-[#C4C4C4] text-xs sm:text-sm md:text-sm lg:text-base xl:text-lg outline-none bg-transparent"
+          class="w-[82%] sm:w-[80%] h-full text-[black] text-xs sm:text-sm md:text-sm lg:text-base xl:text-lg outline-none bg-transparent"
         />
       </div>
     </div>
@@ -44,7 +45,7 @@
     <div
       class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-16"
     >
-      <div v-for="(item, index) in products" :key="index">
+      <div v-for="(item, index) in filteredProducts" :key="index">
         <ProductUI
           :malumot="{
             image: item.image,
@@ -64,6 +65,14 @@ import { data } from "@/constants/carusel";
 import search from "@/assets/icons/search.png";
 
 const products = ref([]);
+
+const searchText = ref("");
+
+const filteredProducts = computed(() => {
+  return products.value.filter((product) =>
+    product.description.toLowerCase().includes(searchText.value.toLowerCase()),
+  );
+});
 
 async function getProducts() {
   try {
